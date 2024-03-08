@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Converter</title>
+</head>
+<body>
+
+    <h1>Link Converter</h1>
+
+    <label for="originalLink">Original Link:</label>
+    <input type="text" id="originalLink" placeholder="Enter the original link">
+
+    <label for="convertedLink">Converted Link:</label>
+    <input type="text" id="convertedLink" readonly>
+
+    <button onclick="convertLink()">Convert</button>
+
+    <script>
+        function convertLink() {
+            const originalLink = document.getElementById('originalLink').value.trim();
+            const convertedLink = generateConvertedLink(originalLink);
+            document.getElementById('convertedLink').value = convertedLink;
+        }
+
+        function generateConvertedLink(originalLink) {
+            // You can implement your own logic for generating a unique identifier
+            // Here, I'm using a simple random string, but this is not secure
+            const randomString = Math.random().toString(36).substring(7);
+            return `http://example.com/${randomString}`; // Replace with your domain
+        }
+    </script>
+
+</body>
+</html>
